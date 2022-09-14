@@ -1,9 +1,14 @@
-
+import Link from 'next/link'
+import navStyle from '../styles/Nav.module.css'
 
 function Nav(){
     return(
-        <header>
-            <h1>QUIZZLER</h1>
+        <header className={navStyle.nav}>
+            <Link href='/'>
+                <ul>
+                    <li>QUIZZER</li>
+                </ul>
+            </Link>
         </header>
     )
 }

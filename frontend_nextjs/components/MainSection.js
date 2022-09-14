@@ -1,9 +1,11 @@
-
+import Link from 'next/link'
 
 function MainSection(){
     return(
         <div className="standard-format">
-            <button className="button-17">Let's Make a Quiz!</button>
+            <Link href='/addquiz'>
+                <button className="button-17">Let's Make a Quiz!</button>
+            </Link>
         </div>
     )
 }
