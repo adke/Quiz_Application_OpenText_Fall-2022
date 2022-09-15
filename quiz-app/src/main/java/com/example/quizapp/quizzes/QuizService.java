@@ -1,12 +1,19 @@
 package com.example.quizapp.quizzes;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class QuizService {
     public List<Quiz> getQuizzes() {
-        return null;
+        return List.of(
+                new Quiz(
+                        "test",
+                        "test"
+                )
+        );
     }
 
     public Quiz getQuiz(String id) {

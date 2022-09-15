@@ -5,9 +5,8 @@ public class Quiz {
     private Long quizID;
     private String subject;
 
-    public Quiz(String quizName, Long quizID, String subject) {
+    public Quiz(String quizName, String subject) {
         this.quizName = quizName;
-        this.quizID = quizID;
         this.subject = subject;
     }
 
