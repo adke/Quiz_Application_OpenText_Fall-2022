@@ -8,8 +8,8 @@ function AddQuestions(){
 
         var number = document.getElementById("questions").value;
         var form = document.getElementById("form");
-        var addButton = document.getElementById("button");
-        var subButton = document.getElementById("submit");
+        var ul = document.getElementById("ul");
+        var div = document.getElementById("div");
 
         while (form.hasChildNodes()) {
             form.removeChild(form.lastChild);
@@ -23,18 +23,21 @@ function AddQuestions(){
             form.appendChild(input);
             form.appendChild(document.createElement("br"));
 
-            form.appendChild(document.createTextNode("Answer " + (i+1) + ":    "));
-            var input = document.createElement("input");
-            input.type = "text";
+            form.appendChild(document.createTextNode("Answer:    "));
+            for (let j = 0; j < 4; j++) {
+                var input = document.createElement("input");
+                input.type = "text";
+                form.appendChild(document.createElement("br"));
+                form.appendChild(input);
+                console.log('hi');
+            }
 
             form.appendChild(document.createElement("br"));
-            form.appendChild(input);
-            form.appendChild(document.createElement("br"));
+            
         }
 
 
     };
-
 
     return(
         <div className={questionStyles.addq}>
@@ -42,7 +45,7 @@ function AddQuestions(){
             <input className={questionStyles.noq} type='text' id='questions' name='questions' />
             
             <form id="form" required>
-                
+                {/* <div id="div" required/> */}
             </form>
 
             <br />

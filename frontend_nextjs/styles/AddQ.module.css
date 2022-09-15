@@ -11,15 +11,17 @@
 
 .addq .noq {
     background-color: white;
-    color: white;
+    color: black;
+    width: 2rem;
+    text-align: center;
     
 }
 .addq input {
     border: black solid 1px;
-    background-color: rgba(103, 103, 103, 0.3);
+    background-color: white;
     color: black;
-    
-    width: 12rem;
+    margin: 0.5rem 0;
+    width: 10rem;
     height: 1.5rem;
     padding: 5px;
     border-radius: 5px;
@@ -27,9 +29,12 @@
 
 .addq form {
     color: black;
-    border: red solid 2px;
+    border: red solid 1px;
 
     margin-top: 10px;
+}
+.addq ul {
+    border: blue solid 1px;
 }
 
 .addq span {
