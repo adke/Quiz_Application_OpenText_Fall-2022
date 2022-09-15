@@ -1,12 +1,15 @@
 import Link from 'next/link'
+import styles from '../styles/Home.module.css'
 
-function MainSection(){
-    return(
-        <div className="standard-format">
-            <Link href='/addquiz'>
-                <button className="button-17">Let's Make a Quiz!</button>
-            </Link>
-        </div>
+function MainSection() {
+    return (
+        <>
+            <div className="bootstrapbuttons">
+                <Link href='/addquiz'>
+                    <button type="button" class="btn btn-outline-primary">Create Quiz</button>
+                </Link>
+            </div>
+        </>
     )
 }
 

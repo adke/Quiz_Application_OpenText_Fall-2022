@@ -1,7 +1,6 @@
 import questionStyles from '../styles/AddQ.module.css'
 
 
-
 function AddQuestions(){
     // add questions function
     const addFields = () => {
