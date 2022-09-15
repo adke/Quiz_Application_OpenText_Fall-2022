@@ -1,36 +1,26 @@
 package com.example.quizapp.quizzes;
 
+import com.example.quizapp.questions.Questions;
+import lombok.Data;
+
+import javax.persistence.*;
+import java.util.List;
+
+@Data
+@Entity
 public class Quiz {
-    private String quizName;
+    @Id
+    @GeneratedValue
     private Long quizID;
+    private String quizName;
     private String subject;
+
+    @OneToMany
+    @JoinColumn(name = "quizID")
+    private List<Questions> questions;
 
     public Quiz(String quizName, String subject) {
         this.quizName = quizName;
-        this.subject = subject;
-    }
-
-    public String getQuizName() {
-        return quizName;
-    }
-
-    public void setQuizName(String quizName) {
-        this.quizName = quizName;
-    }
-
-    public Long getQuizID() {
-        return quizID;
-    }
-
-    public void setQuizID(Long quizID) {
-        this.quizID = quizID;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
         this.subject = subject;
     }
 
