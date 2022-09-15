@@ -38,17 +38,17 @@ function AddQuestions(){
 
     return(
         <div className={questionStyles.addq}>
-            <h4>Number of Questions:</h4>
-            <input className='noq' type='text' id='questions' name='questions' />
+            <label>Number of Questions:</label>
+            <input className={questionStyles.noq} type='text' id='questions' name='questions' />
             
             <form id="form" required>
                 
-                
             </form>
+
             <br />
-            <button href='#' id='addButton' className="button-17" onClick={addFields}>Add Questions</button>
+            <button href='#' id='addButton' className="btn btn-outline-primary" onClick={addFields}>Add Questions</button>
             <span />
-            <button type='submit' value='Submit' id='subButton' className="button-17" >Submit</button>
+            <button type='submit' value='Submit' id='subButton' className="btn btn-outline-primary" >Submit</button>
         </div>
     )
 }
