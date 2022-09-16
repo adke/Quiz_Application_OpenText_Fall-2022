@@ -35,8 +35,8 @@ public class Question {
     private List<Answer> answers;
 
     @Column(
-            name = "correct_answer_id",
-            nullable = false
+            name = "correct_answer_id"
+            //nullable = false
     )
     private Long correctAnswerID;
 

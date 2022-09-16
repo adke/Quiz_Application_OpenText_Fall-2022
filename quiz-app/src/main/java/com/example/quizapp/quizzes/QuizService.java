@@ -8,12 +8,7 @@ import java.util.List;
 @Service
 public class QuizService {
     public List<Quiz> getQuizzes() {
-        return List.of(
-                new Quiz(
-                        "test",
-                        "test"
-                )
-        );
+        return null;
     }
 
     public Quiz getQuiz(String id) {
