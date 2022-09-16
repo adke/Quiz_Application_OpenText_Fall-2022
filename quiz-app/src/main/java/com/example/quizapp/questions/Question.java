@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
-@Entity
+@Entity(name = "Question")
 public class Question {
     @Id
     @GeneratedValue
