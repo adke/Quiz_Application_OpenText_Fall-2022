@@ -1,6 +1,6 @@
 package com.example.quizapp.quizzes;
 
-import com.example.quizapp.questions.Questions;
+import com.example.quizapp.questions.Question;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -15,9 +15,8 @@ public class Quiz {
     private String quizName;
     private String subject;
 
-    @OneToMany
-    @JoinColumn(name = "quizID")
-    private List<Questions> questions;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz")
+    private List<Question> questions;
 
     public Quiz(String quizName, String subject) {
         this.quizName = quizName;
