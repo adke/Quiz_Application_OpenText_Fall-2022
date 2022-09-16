@@ -7,12 +7,28 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
-@Entity
+@Entity(name = "Quiz")
 public class Quiz {
     @Id
-    @GeneratedValue
+    //@SequenceGenerator and @GeneratedValue is use for generate a big serial integer for id
+    @SequenceGenerator(name = "quiz_sequence", sequenceName = "quiz_sequence", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "quiz_sequence")
+    @Column(
+            name = "quiz_id",
+            updatable = false
+    )
     private Long quizID;
+    @Column(
+            name = "quiz_name",
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
     private String quizName;
+    @Column(
+            name = "subject",
+            nullable = false,
+            columnDefinition = "TEXT"
+    )
     private String subject;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz")

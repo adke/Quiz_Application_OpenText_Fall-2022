@@ -29,7 +29,7 @@ public class Answer {
     //@nullable sets if this field can be null
     //TEXT
     @Column(
-            name = "content",
+            name = "answer_content",
             nullable = false,
             columnDefinition = "TEXT"
     )
