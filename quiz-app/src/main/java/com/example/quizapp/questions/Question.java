@@ -24,4 +24,9 @@ public class Question {
     private List<Answer> answers;
 
     private Long correctAnswerID;
+
+    public Question(Quiz quiz, String content){
+        this.quiz = quiz;
+        this.content = content;
+    }
 }
