@@ -4,37 +4,47 @@
     margin-left: 2rem;
     margin-top: 2rem;
 }  
+.addq p {
+    margin-right: 2rem;
+}
 
 .addq label {
     margin-right: 1rem;
+    font-weight: bold;
 }
 
 .addq .noq {
-    background-color: white;
+    background-color: transparent;
+    
     color: black;
+
     width: 2rem;
     text-align: center;
-    
 }
+
 .addq input {
     border: black solid 1px;
-    background-color: white;
     color: black;
+
     margin: 0.5rem 0;
-    width: 10rem;
-    height: 1.5rem;
-    padding: 5px;
+    margin-bottom: 1rem;
+
     border-radius: 5px;
 }
 
 .addq form {
     color: black;
-    border: red solid 1px;
-
-    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    /* border: red solid 1px; */
+    margin: 0 10px;
 }
 .addq ul {
-    border: blue solid 1px;
+    /* border: red solid 1px; */
+}
+.addq .buttons {
+    
 }
 
 .addq span {

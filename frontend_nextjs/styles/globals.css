@@ -73,3 +73,18 @@ footer {
 .anchor {
   margin: 20px 80px;
 }
+
+
+/* AddQuiz Inputs */
+.Qinput {
+  width: 20rem;
+}
+.A_right_input {
+  background-color: rgba(191, 227, 190, 0.5);
+}
+.A_wrong_input {
+  background-color: rgba(244, 113, 116, 0.5);
+}
+.SubmitInput {
+  border: red;
+}
