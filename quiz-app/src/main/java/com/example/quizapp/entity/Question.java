@@ -1,17 +1,24 @@
-package com.example.quizapp.questions;
+package com.example.quizapp.entity;
 
-import com.example.quizapp.answers.Answer;
-import com.example.quizapp.quizzes.Quiz;
+import com.example.quizapp.entity.Answer;
+import com.example.quizapp.entity.Quiz;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity(name = "Question")
+@Table(
+        name = "question")
 public class Question {
     @Id
-    //@SequenceGenerator and @GeneratedValue is use for generate a big serial integer for id
     @SequenceGenerator(name = "question_sequence", sequenceName = "question_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "question_sequence")
     @Column(
@@ -19,11 +26,6 @@ public class Question {
             updatable = false
     )
     private Long questionID;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "quizID")
-    private Quiz quiz;
-
     @Column(
             name = "question_content",
             nullable = false,
@@ -31,12 +33,13 @@ public class Question {
     )
     private String content;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "question")
-    private List<Answer> answers;
-
     @Column(
             name = "correct_answer_id",
             nullable = false
     )
     private Long correctAnswerID;
+
+    @OneToMany(targetEntity = Answer.class, cascade = CascadeType.ALL)
+    @JoinColumn(name ="qa_fk",referencedColumnName = "question_id")
+    private List<Answer> answers;
 }

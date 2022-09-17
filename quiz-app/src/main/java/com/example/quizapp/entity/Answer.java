@@ -1,12 +1,20 @@
-package com.example.quizapp.answers;
+package com.example.quizapp.entity;
 
-import com.example.quizapp.questions.Question;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 
 @Data
-@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Entity(name = "Answer")
+@Table(
+        name = "answer"
+)
 public class Answer {
     //@Id Sets answerID to be the primary key of the table
     @Id
@@ -21,13 +29,6 @@ public class Answer {
             updatable = false
     )
     private Long answerID;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "questionID")
-    private Question question;
-
-    //@nullable sets if this field can be null
-    //TEXT
     @Column(
             name = "answer_content",
             nullable = false,

@@ -1,16 +1,23 @@
-package com.example.quizapp.quizzes;
+package com.example.quizapp.entity;
 
-import com.example.quizapp.questions.Question;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity(name = "Quiz")
+@Table(
+        name = "quiz"
+)
 public class Quiz {
     @Id
-    //@SequenceGenerator and @GeneratedValue is use for generate a big serial integer for id
     @SequenceGenerator(name = "quiz_sequence", sequenceName = "quiz_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "quiz_sequence")
     @Column(
@@ -31,13 +38,12 @@ public class Quiz {
     )
     private String subject;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "quiz")
+    //Hibernate One to Many Annotation
+    @OneToMany(targetEntity = Question.class, cascade = CascadeType.ALL)
+    //@JoinColumn: "qq_fk" = quiz question foreign key, referencedColumnName creates a reference field in the question table
+    @JoinColumn(name ="qq_fk",referencedColumnName = "quiz_id")
     private List<Question> questions;
 
-    public Quiz(String quizName, String subject) {
-        this.quizName = quizName;
-        this.subject = subject;
-    }
 
 }
 
