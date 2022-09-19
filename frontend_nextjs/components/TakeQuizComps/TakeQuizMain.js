@@ -2,6 +2,7 @@ import styles from '../../styles/TakeQuiz.module.css'
 import React, { Component } from 'react'
 import Question from './Question';
 import Answer from './Answer'
+import Link from 'next/link'
 
 export default class TakeQuizMain extends Component {
      // initiating the local state
@@ -140,10 +141,15 @@ export default class TakeQuizMain extends Component {
                     </div>
                 </>) : (
                     <div className={styles.scorepage}>
-                        <h1>
+                        <h4>
                             You have completed the quiz!
-                        </h1>
-                        <h1>You got {score}!</h1>
+                        </h4>
+                        <h4>You got {score}!</h4>
+                        <div className="bootstrapbuttons">
+                            <Link href='/'>
+                            <button type="button" class="btn btn-outline-primary">Go Back Home</button>
+                            </Link>
+                        </div>
                     </div>
                 )}
             </div>  
