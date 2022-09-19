@@ -33,7 +33,7 @@ public class QuizService {
         return quizRepository.findById(id);
     }
 
-    public ResponseEntity<String> deleteQuiz(String id) {
-        return null;
+    public void deleteQuiz(Long id) {
+        quizRepository.deleteById(id);
     }
 }
