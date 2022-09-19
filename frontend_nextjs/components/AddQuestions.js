@@ -1,5 +1,5 @@
 import questionStyles from '../styles/AddQ.module.css'
-import styles from '../styles/Card.module.css'
+
 import { useState } from 'react'
 
 function AddQuestions() {
@@ -40,16 +40,12 @@ function AddQuestions() {
                 } else {
                     input.className = "A_wrong_input";
                 }
-                
+            
                 ul.appendChild(document.createElement("br"));
                 ul.appendChild(input);                          // Answer input
             }
-
-            ul.appendChild(document.createElement("br"));
-            
+            ul.appendChild(document.createElement("br"));   
         }
-
-
     };
 
     const [quiz, setQuiz] = useState();
@@ -66,7 +62,7 @@ function AddQuestions() {
         console.log(data)
     }
 
-    return(
+    return (
         <div className={questionStyles.addq}>
             
             <div>
@@ -74,13 +70,21 @@ function AddQuestions() {
                 <p>Input the number of questions below and click "Add Questions". Then input the correct answer in the green box and the incorrect answers in the red box.</p>
             </div>
             
+            <label>Quiz Name:</label>
+            <input type='text' />
+            
+            <br />
+            <label>Subject:</label>
+            <input type='text' />
+            
+            <br />
             <label>Number of Questions:</label>
             <input className={questionStyles.noq} type='text' id='questions' name='questions' />
             
             <form id='form' value={quiz} onChange={e => setQuiz(e.target.value)}>
 
             </form>
-
+            
             <div className={questionStyles.buttons}>
                 <br />
                 <button href='#' id='addButton' className="btn btn-outline-primary" onClick={addFields}>Add Questions</button>
