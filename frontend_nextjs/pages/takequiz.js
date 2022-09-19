@@ -3,6 +3,7 @@ import Nav from '../components/Nav'
 import Image from 'next/image'
 import TakeQuizMain from '../components/TakeQuizComps/TakeQuizMain'
 import Answer from '../components/TakeQuizComps/Answer'
+import styles from '../styles/TakeQuiz.module.css'
 // import styles from '../styles/Home.module.css'
 
 
@@ -13,20 +14,10 @@ export default function Takequiz() {
         <title>Quizzler</title>
       </Head>
       <Nav />
-      <div className='question-format'>
+      <div className={styles.questionFormat}>
         <TakeQuizMain />
       </div>    
     </div>
   )
 }
 
-
-// export async function getStaticProps () {
-//   const quizData = await fetch('https://api.jsonbin.io/v3/qs/632210a9e13e6063dca7fc9b').then((res) => res.json()
-//   );
-
-//   return {
-//     props: {
-//       exploreData
-//     }
-//   }
