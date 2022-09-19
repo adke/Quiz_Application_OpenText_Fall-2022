@@ -2,10 +2,9 @@ package com.example.quizapp.controller;
 
 import com.example.quizapp.dto.NewQuizRequest;
 import com.example.quizapp.entity.Quiz;
-import com.example.quizapp.repository.AnswerRepository;
-import com.example.quizapp.repository.QuestionRepository;
-import com.example.quizapp.repository.QuizRepository;
+import com.example.quizapp.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,19 +13,25 @@ import java.util.List;
 @RequestMapping(path = "/quizzes")
 public class QuizController {
     @Autowired
-    private QuizRepository quizRepository;
-    @Autowired
-    private QuestionRepository questionRepository;
-    @Autowired
-    private AnswerRepository answerRepository;
+    private QuizService quizService;
 
     @PostMapping("/createNewQuiz")
     public Quiz createNewQuiz(@RequestBody NewQuizRequest request) {
-        return quizRepository.save(request.getQuiz());
+        return quizService.createNewQuiz(request);
     }
     @GetMapping("/getAllQuiz")
-    public List<Quiz> getAllQuizzes() {
-        return quizRepository.findAll();
+    public List<Quiz> getAllQuiz() {
+        return quizService.getAllQuiz();
+    }
+
+    @GetMapping(path = "/{id}")
+    public Quiz getQuiz(@PathVariable String id) {
+        return quizService.getQuiz(id);
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<String> deleteQuiz(@PathVariable String id) {
+        return quizService.deleteQuiz(id);
     }
 
 
@@ -56,8 +61,5 @@ public class QuizController {
 //    public ResponseEntity<String> editQuiz(@PathVariable String id) {
 //        return quizService.editQuiz(id);
 //    }
-//    @DeleteMapping(path = "/{id}")
-//    public ResponseEntity<String> deleteQuiz(@PathVariable String id) {
-//        return quizService.deleteQuiz(id);
-//    }
+
 }
