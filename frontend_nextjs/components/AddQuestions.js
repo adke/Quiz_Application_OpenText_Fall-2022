@@ -37,9 +37,7 @@ function AddQuestions() {
 
                 if (j == 0) {
                     input.className = "A_right_input";
-                    console.log('testing');
                 } else {
-                    
                     input.className = "A_wrong_input";
                 }
                 
