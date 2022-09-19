@@ -144,7 +144,7 @@ export default class TakeQuizMain extends Component {
                         <h4>
                             You have completed the quiz!
                         </h4>
-                        <h4>You got {score}!</h4>
+                        <h4>You got {score} of {(questions.toString().length)}</h4>
                         <div className="bootstrapbuttons">
                             <Link href='/'>
                             <button type="button" class="btn btn-outline-primary">Go Back Home</button>
