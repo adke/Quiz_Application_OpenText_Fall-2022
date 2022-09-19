@@ -50,6 +50,7 @@ header {
   grid-row: span;
 }
 
+<<<<<<< Updated upstream
 h1{
   padding-left: 3rem;
   color: white;
@@ -88,6 +89,10 @@ h4, p {
   overflow: visible;
   padding: 2px 24px;
   position: relative;
+=======
+.not-found {
+  margin: 30% 0;
+>>>>>>> Stashed changes
   text-align: center;
   text-transform: none;
   transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
@@ -104,9 +109,22 @@ h4, p {
   color: #174ea6;
 }
 
+<<<<<<< Updated upstream
 .button-17:active {
   box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
   outline: none;
+=======
+.not-found p {
+  color: #4979ff;
+  text-decoration: underline;
+}
+
+.cardformat {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 25px 75px;
+>>>>>>> Stashed changes
 }
 
 .button-17:focus {
@@ -118,6 +136,7 @@ h4, p {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
+<<<<<<< Updated upstream
 .button-17:not(:disabled):hover {
   box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
 }
@@ -134,3 +153,19 @@ h4, p {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
 
+=======
+#home:hover {
+  color: white;
+  font-weight: bold;
+}
+
+#about:hover {
+  color: white;
+  font-weight: bold;
+}
+
+.secondary-main {
+  margin: 110px;
+  margin-top: 25px;
+}
+>>>>>>> Stashed changes
