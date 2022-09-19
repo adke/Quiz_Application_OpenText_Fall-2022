@@ -2,7 +2,7 @@ import questionStyles from '../styles/AddQ.module.css'
 import styles from '../styles/Card.module.css'
 import { useState } from 'react'
 
-function AddQuestions(){
+function AddQuestions() {
 
     // add questions function
     const addFields = () => {
@@ -17,7 +17,7 @@ function AddQuestions(){
         for (let i = 0; i < number; i++){
             // ul Element
             var ul = document.createElement("ul");
-            ul.id = "ul"
+            ul.id = "ul";
             form.appendChild(ul);
 
             ul.appendChild(document.createTextNode("Question " + (i+1) + ":    "));
@@ -30,7 +30,7 @@ function AddQuestions(){
             
             ul.appendChild(document.createElement("br"));
 
-            ul.appendChild(document.createTextNode("Answer:    "));
+            ul.appendChild(document.createTextNode("Answer:"));
             for (let j = 0; j < 4; j++) {
                 var input = document.createElement("input");
                 input.type = "text";
@@ -54,6 +54,20 @@ function AddQuestions(){
 
     };
 
+    const [quiz, setQuiz] = useState();
+
+    const submitQuiz = async () => {
+        const response = await fetch('/api/index', {
+            method: 'POST',
+            body: JSON.stringify({ quiz }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        const data = await response.json()
+        console.log(data)
+    }
+
     return(
         <div className={questionStyles.addq}>
             
@@ -65,7 +79,7 @@ function AddQuestions(){
             <label>Number of Questions:</label>
             <input className={questionStyles.noq} type='text' id='questions' name='questions' />
             
-            <form id='form' action='/log.json' method='post'>
+            <form id='form' value={quiz} onChange={e => setQuiz(e.target.value)}>
 
             </form>
 
@@ -73,7 +87,7 @@ function AddQuestions(){
                 <br />
                 <button href='#' id='addButton' className="btn btn-outline-primary" onClick={addFields}>Add Questions</button>
                 <span />
-                <button type='submit' className="btn btn-outline-primary">Submit</button>
+                <button type='submit' onClick={submitQuiz} className="btn btn-outline-primary">Submit</button>
                 {/* <input type='submit' className="btn btn-outline-primary" /> */}
             </div>
         </div>
