@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class QuizService {
@@ -25,14 +26,14 @@ public class QuizService {
     }
 
     public List<Quiz> getAllQuiz() {
-        return null;
+        return quizRepository.findAll();
     }
 
-    public Quiz getQuiz(String id) {
-        return null;
+    public Optional<Quiz> getQuiz(Long id) {
+        return quizRepository.findById(id);
     }
 
-    public ResponseEntity<String> deleteQuiz(String id) {
-        return null;
+    public void deleteQuiz(Long id) {
+        quizRepository.deleteById(id);
     }
 }
