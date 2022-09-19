@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/quizzes")
@@ -25,7 +26,7 @@ public class QuizController {
     }
 
     @GetMapping(path = "/{id}")
-    public Quiz getQuiz(@PathVariable String id) {
+    public Optional<Quiz> getQuiz(@PathVariable Long id) {
         return quizService.getQuiz(id);
     }
 
