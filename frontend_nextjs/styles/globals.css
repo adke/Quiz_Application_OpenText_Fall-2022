@@ -45,8 +45,7 @@ h1{
 }
 
 h2{
-  padding-left: 4.5rem;
-  padding-top: 3rem;
+  padding-top: 1rem;
 }
 
 h4, p {
@@ -110,14 +109,8 @@ h4, p {
 .cardformat {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  margin: 25px 75px;
-}
-
-.cardformat {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
   margin: 25px 75px;
 }
 
@@ -158,6 +151,6 @@ h4, p {
 }
 
 .secondary-main {
-  margin: 110px;
+  margin: 15px;
   margin-top: 25px;
 }

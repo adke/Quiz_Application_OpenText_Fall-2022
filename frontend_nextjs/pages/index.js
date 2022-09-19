@@ -10,18 +10,6 @@ export default function Home() {
   return (
     <>
       <div>
-        <Head>
-          <title>Quizzer</title>
-        </Head>
-
-        
-        <Nav />    
-        <MainSection />
-        <h2>Quizzes</h2>
-        <QuizCard />
-      </div>
-
-      <div className="main">
         <Nav />
         <div className="secondary-main">
           <h1 className={styles.title}>Homepage</h1>

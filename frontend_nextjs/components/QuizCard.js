@@ -27,24 +27,6 @@ function QuizCard({ }) {
                     <p>Subject</p>
                 </div>
             </div>
-            <div className={styles.card}>
-                <div className={styles.container}>
-                    <h4><b>Quiz XXX2</b></h4>
-                    <p>2022-09-15</p>
-                </div>
-            </div>
-            <div className={styles.card}>
-                <div className={styles.container}>
-                    <h4><b>Quiz XXX3</b></h4>
-                    <p>2022-09-16</p>
-                </div>
-            </div>
-            <div className={styles.card}>
-                <div className={styles.container}>
-                    <h4><b>Quiz XXX4</b></h4>
-                    <p>2022-09-17</p>
-                </div>
-            </div>
         </div>
     );
 }
