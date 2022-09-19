@@ -34,10 +34,6 @@ public class QuizController {
         return quizService.deleteQuiz(id);
     }
 
-
-
-
-
 //    private final QuizService quizService;
 //    @Autowired
 //    public QuizController(QuizService quizService){

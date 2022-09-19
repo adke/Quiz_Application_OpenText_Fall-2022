@@ -24,12 +24,14 @@ public class Quiz {
             name = "quiz_id",
             updatable = false
     )
+
     private Long quizID;
     @Column(
             name = "quiz_name",
             nullable = false,
             columnDefinition = "TEXT"
     )
+
     private String quizName;
     @Column(
             name = "subject",
@@ -38,10 +40,9 @@ public class Quiz {
     )
     private String subject;
 
-    //Hibernate One to Many Annotation
-    @OneToMany(targetEntity = Question.class, cascade = CascadeType.ALL)
-    //@JoinColumn: "qq_fk" = quiz question foreign key, referencedColumnName creates a reference field in the question table
-    @JoinColumn(name ="qq_fk",referencedColumnName = "quiz_id")
+//    @OneToMany(targetEntity = Question.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name ="qq_fk",referencedColumnName = "quiz_id")
+    @OneToMany(mappedBy = "quiz")
     private List<Question> questions;
 
 

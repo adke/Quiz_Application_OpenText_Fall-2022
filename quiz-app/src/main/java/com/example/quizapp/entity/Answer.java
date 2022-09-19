@@ -29,10 +29,15 @@ public class Answer {
             updatable = false
     )
     private Long answerID;
+
     @Column(
             name = "answer_content",
             nullable = false,
             columnDefinition = "TEXT"
     )
     private String content;
+
+    @ManyToOne
+    @JoinColumn(name = "question_id")
+    private Question question;
 }

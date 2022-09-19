@@ -39,7 +39,12 @@ public class Question {
     )
     private Long correctAnswerID;
 
-    @OneToMany(targetEntity = Answer.class, cascade = CascadeType.ALL)
-    @JoinColumn(name ="qa_fk",referencedColumnName = "question_id")
+    @ManyToOne
+    @JoinColumn(name = "quiz_id")
+    private Quiz quiz;
+
+//    @OneToMany(targetEntity = Answer.class, cascade = CascadeType.ALL)
+//    @JoinColumn(name ="qa_fk",referencedColumnName = "question_id")
+    @OneToMany(mappedBy = "question")
     private List<Answer> answers;
 }
