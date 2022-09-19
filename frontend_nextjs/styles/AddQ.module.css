@@ -1,0 +1,48 @@
+
+
+.addq {
+    margin-left: 2rem;
+    margin-top: 2rem;
+}  
+.addq p {
+    margin-right: 2rem;
+}
+
+.addq label {
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+.addq .noq {
+    background-color: transparent;
+    
+    color: black;
+
+    width: 2rem;
+    text-align: center;
+}
+
+.addq input {
+    border: black solid 1px;
+    color: black;
+
+    margin: 0.5rem 0;
+    margin-bottom: 1rem;
+
+    border-radius: 5px;
+}
+
+.addq form {
+    color: black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    /* border: red solid 1px; */
+    margin: 0 10px;
+}
+
+
+.addq span {
+    margin: 10px;
+}
+
