@@ -62,7 +62,7 @@ function AddQuestions() {
         console.log(data)
     }
 
-    return(
+    return (
         <div className={questionStyles.addq}>
             
             <div>
