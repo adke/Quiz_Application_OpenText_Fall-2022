@@ -31,7 +31,7 @@ public class Question {
             nullable = false,
             columnDefinition = "TEXT"
     )
-    private String content;
+    private String questionContent;
 
     @Column(
             name = "correct_answer_id",

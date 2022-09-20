@@ -35,7 +35,7 @@ public class Answer {
             nullable = false,
             columnDefinition = "TEXT"
     )
-    private String content;
+    private String answerContent;
 
     @ManyToOne
     @JoinColumn(name = "question_id")
