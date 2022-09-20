@@ -25,6 +25,7 @@ function AddQuestions() {
             var input = document.createElement("input");
             input.type = "text";
             input.className = "Qinput";
+            input.required = true;
             ul.appendChild(document.createElement("br"));
             ul.appendChild(input);                            // Question input
             
@@ -34,7 +35,7 @@ function AddQuestions() {
             for (let j = 0; j < 4; j++) {
                 var input = document.createElement("input");
                 input.type = "text";
-
+                input.required = true;
                 if (j == 0) {
                     input.className = "A_right_input";
                 } else {
@@ -71,11 +72,11 @@ function AddQuestions() {
             </div>
             
             <label>Quiz Name:</label>
-            <input type='text' />
+            <input type='text' required/>
             
             <br />
             <label>Subject:</label>
-            <input type='text' />
+            <input type='text' required/>
             
             <br />
             <label>Number of Questions:</label>
@@ -90,7 +91,6 @@ function AddQuestions() {
                 <button href='#' id='addButton' className="btn btn-outline-primary" onClick={addFields}>Add Questions</button>
                 <span />
                 <button type='submit' onClick={submitQuiz} className="btn btn-outline-primary">Submit</button>
-                {/* <input type='submit' className="btn btn-outline-primary" /> */}
             </div>
         </div>
     )
