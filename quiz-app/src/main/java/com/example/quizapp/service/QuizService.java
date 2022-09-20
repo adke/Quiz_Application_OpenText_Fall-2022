@@ -1,6 +1,7 @@
 package com.example.quizapp.service;
 
 import com.example.quizapp.dto.NewQuizRequest;
+import com.example.quizapp.dto.QuizInfoResponse;
 import com.example.quizapp.entity.Quiz;
 import com.example.quizapp.repository.AnswerRepository;
 import com.example.quizapp.repository.QuestionRepository;
@@ -25,8 +26,8 @@ public class QuizService {
         return quizRepository.save(request.getQuiz());
     }
 
-    public List<Quiz> getAllQuiz() {
-        return quizRepository.findAll();
+    public List<QuizInfoResponse> getAllQuiz() {
+        return quizRepository.getQuizInformation();
     }
 
     public Optional<Quiz> getQuiz(Long id) {

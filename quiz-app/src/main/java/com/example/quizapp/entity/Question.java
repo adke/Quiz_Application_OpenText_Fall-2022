@@ -1,7 +1,5 @@
 package com.example.quizapp.entity;
 
-import com.example.quizapp.entity.Answer;
-import com.example.quizapp.entity.Quiz;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,12 +30,6 @@ public class Question {
             columnDefinition = "TEXT"
     )
     private String questionContent;
-
-    @Column(
-            name = "correct_answer_id",
-            nullable = false
-    )
-    private Long correctAnswerID;
 
     @ManyToOne
     @JoinColumn(name = "quiz_id")

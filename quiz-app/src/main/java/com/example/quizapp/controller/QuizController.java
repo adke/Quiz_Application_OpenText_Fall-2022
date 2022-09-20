@@ -1,6 +1,7 @@
 package com.example.quizapp.controller;
 
 import com.example.quizapp.dto.NewQuizRequest;
+import com.example.quizapp.dto.QuizInfoResponse;
 import com.example.quizapp.entity.Quiz;
 import com.example.quizapp.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class QuizController {
         return quizService.createNewQuiz(request);
     }
     @GetMapping("/getAllQuiz")
-    public List<Quiz> getAllQuiz() {
+    public List<QuizInfoResponse> getAllQuiz() {
         return quizService.getAllQuiz();
     }
 
