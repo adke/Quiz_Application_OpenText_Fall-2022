@@ -14,18 +14,20 @@ export default function Home() {
         <div className="secondary-main">
           <h1 className={styles.title}>Homepage</h1>
           <h2 className={styles.leftmargin}>Welcome to Quizzer!</h2>
-          <h4 className={styles.leftmargin}>To learn more about the game, please navigate to the following:</h4>
+          <p className={styles.leftmargin}>Please choose one of the following:</p>
+          <QuizCard />
+{/*           <h4 className={styles.leftmargin}>To learn more about the game, please navigate to the following:</h4>
           <div className="bootstrapbuttons">
             <Link href='about'>
               <button type="button" class="btn btn-outline-primary">Learn More</button>
             </Link>
-          </div>
+          </div> */}
           <h4 className={styles.leftmargin}>Otherwise, it's time to have some fun!</h4>
-          <h2 className={styles.leftmargin}>Quizzes</h2>
-          <MainSection />
-          <h4 className={styles.leftmargin}>Or</h4>
-          <p className={styles.leftmargin}>Please choose one of the following:</p>
-          <QuizCard />
+{/*           <h2 className={styles.leftmargin}>Quizzes</h2>
+          <MainSection /> */}
+          {/* <h4 className={styles.leftmargin}>Or</h4> */}
+{/*           <p className={styles.leftmargin}>Please choose one of the following:</p>
+          <QuizCard /> */}
         </div>
       </div>
     </>

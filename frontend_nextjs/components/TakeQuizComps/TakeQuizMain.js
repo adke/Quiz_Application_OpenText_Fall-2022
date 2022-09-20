@@ -4,9 +4,9 @@ import Question from './Question';
 import Answer from './Answer'
 import Link from 'next/link'
 
-export default class TakeQuizMain extends Component {
-     // initiating the local state
-     state = {
+export default class TakeQuizMain extends Component { 
+
+    state = {
         questions: {
             1: 'What US city is known as the "birthplace of jazz"?',
             2: 'What is the capital of Greece?',
@@ -101,7 +101,7 @@ export default class TakeQuizMain extends Component {
     }
 
     render() {
-        const { questions, answers, step, correctAnswer, clickedAnswer,score } = this.state;
+        const { questions, answers, step, correctAnswer, clickedAnswer, score } = this.state;
 
         return (
             <div className={styles.questionFormat}>
@@ -144,7 +144,7 @@ export default class TakeQuizMain extends Component {
                         <h4>
                             You have completed the quiz!
                         </h4>
-                        <h4>You got {score} of {(questions.toString().length)}</h4>
+                        <h4>You got {score} of {Object.keys(questions).length}</h4>
                         <div className="bootstrapbuttons">
                             <Link href='/'>
                             <button type="button" class="btn btn-outline-primary">Go Back Home</button>
@@ -156,5 +156,4 @@ export default class TakeQuizMain extends Component {
         )
     }
 }
-
 
