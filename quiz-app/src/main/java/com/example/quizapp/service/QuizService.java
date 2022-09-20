@@ -16,10 +16,6 @@ import java.util.Optional;
 public class QuizService {
     @Autowired
     private QuizRepository quizRepository;
-    @Autowired
-    private QuestionRepository questionRepository;
-    @Autowired
-    private AnswerRepository answerRepository;
 
     public Quiz createNewQuiz(NewQuizRequest request) {
         return quizRepository.save(request.getQuiz());
