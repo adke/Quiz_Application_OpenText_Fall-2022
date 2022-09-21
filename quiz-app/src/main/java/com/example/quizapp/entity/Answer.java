@@ -41,7 +41,7 @@ public class Answer {
             name = "is_correct",
             nullable = false
     )
-    private boolean isCorrect;
+    private Integer isCorrect;
 
 //    @ManyToOne
 //    @JoinColumn(name = "question_id",referencedColumnName = "question_id")
