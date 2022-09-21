@@ -1,6 +1,5 @@
 export const quiz = [
     {
-        quiz: {
           quizName: "Calculus",
           subject: "Math",
           questions: [
@@ -15,9 +14,7 @@ export const quiz = [
               ]
             }
           ]
-        }
     },
-    
 ]
 
 /*     state = {
@@ -62,3 +59,15 @@ export const quiz = [
         step: 1,
         score: 0
     } */
+
+            {/*   // return (
+      //   <div>
+      //     <Head>
+      //       <title>Quizzler</title>
+      //     </Head>
+      //     <Nav />
+      //     <div className={styles.questionFormat}>
+      //       {/* <MainTakeQuiz props={quizData}/> 
+      //     </div>    
+      //   </div>
+// ) */}
