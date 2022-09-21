@@ -1,21 +1,22 @@
-export const quiz = [
-    {
-          quizName: "Calculus",
-          subject: "Math",
-          questions: [
-            {
-              content: "What is 1 + 1?",
-              correctAnswerID: "4",
-              answers: [
-                { content: "1"},
-                { content: "2"},
-                { content: "3"},
-                { content: "4"}
-              ]
-            }
-          ]
-    },
-]
+// export const quiz = [
+// <<<<<<< HEAD
+//     {
+//           quizName: "Calculus",
+//           subject: "Math",
+//           questions: [
+//             {
+//               content: "What is 1 + 1?",
+//               correctAnswerID: "4",
+//               answers: [
+//                 { content: "1"},
+//                 { content: "2"},
+//                 { content: "3"},
+//                 { content: "4"}
+//               ]
+//             }
+//           ]
+//     },
+// ]
 
 /*     state = {
         questions: {
@@ -71,3 +72,23 @@ export const quiz = [
       //     </div>    
       //   </div>
 // ) */}
+// =======
+//   {"subject":"CS",
+//   "quizName":"CS116",
+//   "questions":[
+//     {"answers":[
+//       {"isCorrect":false,"answerContent":"1"},
+//       {"isCorrect":false,"answerContent":"2"},
+//       {"isCorrect":false,"answerContent":"3"},
+//       {"isCorrect":true,"answerContent":"4"}],
+//       "questionContent":"What's 2 + 2"},
+//     {"answers":[
+//       {"isCorrect":false,"answerContent":"1"},
+//       {"isCorrect":false,"answerContent":"2"},
+//       {"isCorrect":false,"answerContent":"3"},
+//       {"isCorrect":true,"answerContent":"6"}],
+//       "questionContent":"What's 3 + 3"}
+//     ]
+//   }
+// ]
+// >>>>>>> frontend-Gabe
