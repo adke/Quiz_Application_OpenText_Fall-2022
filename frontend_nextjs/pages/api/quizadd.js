@@ -8,7 +8,7 @@ export default function quizAdd(req, res) {
 
         console.log('Req NewQuiz: ', reqNewQuiz);
 
-        res.json({ msg: 'Hello'});  
+        res.json({ msg: 'Submitted'});  
     }
     
     return res.status(500).json({

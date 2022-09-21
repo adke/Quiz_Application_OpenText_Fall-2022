@@ -6,18 +6,17 @@ function AddQuestions() {
 
     // QuizName and Subject
     const [quizName, setQuizName] = useState();
-    console.log('Name: ', quizName);
     const [subject, setSubject] = useState();
-    console.log('Sub: ', subject);
     
+    // Handle Submit Function ============================================================================
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         const newQuiz = {
             "quizName": quizName,
-            subject,
-            Questions
-        }
+            "subject": subject,
+            "questions": [{"answers": [Questions]}]
+        };
 
         console.log("Quiz: ", newQuiz);
 
@@ -33,70 +32,20 @@ function AddQuestions() {
             console.log("Error: ", error);
         }
     }
-
-    // add questions function
-    // const [questions, setQuestions] = useState([{ id: "", text: "" }]);
-    // console.log('Question: ', questions);
-
-    // const addFields = () => {
-    //     var number = document.getElementById("questions").value;
-    //     var form = document.getElementById("form");
-        
-    //     while (form.hasChildNodes()) {
-    //         form.removeChild(form.lastChild);
-    //     }
-
-    //     var questions = []
-    //     for (let i = 0; i < number; i++) {
-    //         questions.push(i + 1);
-    //     }
-    //     console.log(questions)
-
-    //     questions.map(question => (<input type='text' className = "Qinput" placeholder = "Insert Question Here" 
-    //                                 onChange={({ target }) => setQuestions( target?.value )} value={question}/>));
-    // }
-    //     for (let i = 0; i < number; i++){
-    //         // ul Element
-    //         var ul = document.createElement("ul");
-    //         ul.id = "ul";
-    //         form.appendChild(ul);
-
-    //         ul.appendChild(document.createTextNode("Question " + (i+1) + ":    "));
-    //         // Question Input
-    //         var input = document.createElement("input");
-    //         input.type = "text";
-    //         input.className = "Qinput";
-    //         input.required = true;
-    //         input.placeholder = "Insert Question Here";
-    //         input.onChange = ({ target }) => setQuestion( target?.value );
-
-    //         ul.appendChild(document.createElement("br"));
-    //         ul.appendChild(input);                            // Append Question input
-            
-    //         ul.appendChild(document.createElement("br"));
-
-    //         ul.appendChild(document.createTextNode("Answer:"));
-    //         for (let j = 0; j < 4; j++) {
-    //             var input = document.createElement("input");
-    //             input.type = "text";
-    //             input.required = true;
-    //             if (j == 0) {
-    //                 input.className = "A_right_input";
-    //             } else {
-    //                 input.className = "A_wrong_input";
-    //             }
-            
-    //             ul.appendChild(document.createElement("br"));
-    //             ul.appendChild(input);                          // Answer input
-    //         }
-    //         ul.appendChild(document.createElement("br"));   
-    //     }
-    // };
     
+    // QUESTIONS STATE ====================================================================================
     const [Questions, setQuestions] = useState([
-        { Question: '', Answer: '', AnswerContent1: '', AnswerContent2: '', AnswerContent3: ''},
+        { Question: '', 
+          answers:[
+            {Answer: '', isCorrect: true}, 
+            {AnswerContent1: '', isCorrect: false}, 
+            {AnswerContent2: '', isCorrect: false}, 
+            {AnswerContent3: '', isCorrect: false}
+            ]
+        },
     ])
 
+    // handle Functions ===================================================================================
     const handleChangeInput = (index, event) => {
         const values = [...Questions];
         values[index][event.target.name] = event.target.value;
@@ -113,6 +62,7 @@ function AddQuestions() {
         setQuestions(values);
     }
     
+    // Page Structure =======================================================================================
     return (
         <div className={questionStyles.addq}>
             
@@ -150,14 +100,7 @@ function AddQuestions() {
                     <button type='submit' onClick={handleSubmit} className="btn btn-outline-primary">Submit</button>
                 </div>
             </form>
-            
-            <div className={questionStyles.buttons}>
-                <br />
-                {/* onClick={addFields} */}
-                <button href='#' id='addButton' className="btn btn-outline-primary" >Add Questions</button>
-                <span />
-                {/* <button type='submit' onClick={handleSubmit} className="btn btn-outline-primary">Submit</button> */}
-            </div>
+    
         </div>
     )
 }
