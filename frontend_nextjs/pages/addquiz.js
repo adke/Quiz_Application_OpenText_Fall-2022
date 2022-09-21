@@ -15,6 +15,7 @@ export default function Addquiz() {
       <div className='secondary-main'>
         <AddQuestions /> 
       </div>
+      
     </div>
   )
 }
