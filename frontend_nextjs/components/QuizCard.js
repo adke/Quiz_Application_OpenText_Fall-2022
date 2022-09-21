@@ -12,12 +12,7 @@ const QuizCard = ({ props }) => {
     for (let i = 0; i < props.length; i++) {
         arr.push(props[i].quizID);
     }
-    console.log(arr);
-
-    const HandleCards = (props) => {
-
-    }
-
+    // console.log(arr);
     return (
         <div className={styles.carddiv}>
             {arr.map((quizIndex) => (

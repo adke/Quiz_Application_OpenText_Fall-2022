@@ -7,7 +7,7 @@ import Nav from '../components/Nav'
 import Question from '../components/TakeQuizComps/Question'
 // import styles from '../styles/Home.module.css'
 
-export default function Takequiz({}) {
+export default function Takequiz({id}) {
 
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
@@ -21,7 +21,9 @@ export default function Takequiz({}) {
     setCurrentIndex(currentIndex + 1);
     setScore(score + answerform);
     }
-// ("localhost:8080/quizzes/" + {id})
+
+// fetch("localhost:8080/quizzes/" + {id})
+
   useEffect(()=>{
     fetch("https://api.npoint.io/93c556a56820caa8324f")
       .then((res) => res.json())
