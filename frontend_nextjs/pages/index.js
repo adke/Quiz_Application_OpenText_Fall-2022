@@ -13,10 +13,10 @@ export default function Home() {
   const [dataset, setDataset] = useState([])
 
   useEffect(()=>{
-    fetch("http://localhost:8080/quizzes/getAllQuiz")
+    fetch("https://api.npoint.io/35d4f7ca2edc16eb9fc6")
       .then((res) => res.json())
       .then((data) => {
-        setDataset(data.questions)
+        setDataset(data)
       })
   })
 
@@ -28,7 +28,7 @@ export default function Home() {
           <h1 className={styles.title}>Homepage</h1>
           <h2 className={styles.leftmargin}>Welcome to Quizzer!</h2>
           <p className={styles.leftmargin}>Please choose one of the following:</p>
-          <QuizCard />
+          {/* <QuizCard numberSet={dataset} /> */}
           <h4 className={styles.leftmargin}>To learn more about the game, please navigate to the following:</h4>
           <div className="bootstrapbuttons">
             <Link href='about'>

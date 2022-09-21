@@ -23,7 +23,7 @@ export default function Takequiz({}) {
     }
 
   useEffect(()=>{
-    fetch("https://api.npoint.io/4f02fc583fb8d474a8b6")
+    fetch("https://api.npoint.io/93c556a56820caa8324f")
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.questions)
@@ -36,7 +36,7 @@ export default function Takequiz({}) {
       <div>
         <Nav />
           {currentIndex >= questions.length ? (
-            <div className={styles.scoreFormat}> Your score is {score}!</div>
+            <div className={styles.scoreFormat}> Your score is {score} out of {questions.length}!</div>
           ) : (
               <div className={styles.questionFormat}>
                   <div className={styles.cardFormat}>
