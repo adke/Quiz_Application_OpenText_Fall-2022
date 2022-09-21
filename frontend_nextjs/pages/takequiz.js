@@ -16,18 +16,14 @@ export default function Takequiz({}) {
   const [score, setScore] = useState(0);
 
 
-  const handleAnswer = (answers) => {
+  const handleAnswer = (answerform) => {
     const newIndex = currentIndex + 1;
     setCurrentIndex(currentIndex + 1);
-    if (answers === questions[currentIndex].isCorrect == "true"){
-      setScore(score + 1);
+    setScore(score + answerform);
     }
-  }
-
-  // console.log(questions[0]?.answers[3].isCorrect)
 
   useEffect(()=>{
-    fetch("https://api.npoint.io/f6fbd3488bd7f52d40d9 ")
+    fetch("https://api.npoint.io/4f02fc583fb8d474a8b6")
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.questions)
@@ -61,20 +57,20 @@ export default function Takequiz({}) {
                   </div>
                   <div className={styles.answerFormat}>
                     <div className={styles.buttonFormat}>
-                      <Button onClick={(e) => handleAnswer(true)} className={styles.button18} answers = {answers[0].answerContent}> {answers[0].answerContent}</Button>
+                      <Button onClick={() => handleAnswer(questions[currentIndex].answers[0].isCorrect)} className={styles.button18} answerform = {answers[0].answerContent}> {answers[0].answerContent}</Button>
                     </div>
 
                     <div className={styles.buttonFormat}>
-                      <Button onClick={(e) => handleAnswer(false)} className={styles.button18} answers = {answers[1].answerContent}> {answers[1].answerContent}</Button>
+                      <Button onClick={() => handleAnswer(questions[currentIndex].answers[1].isCorrect)} className={styles.button18} answerform = {answers[1].answerContent}> {answers[1].answerContent}</Button>
                     </div>
 
                     <div className={styles.buttonFormat}>
-                      <Button onClick={(e) => handleAnswer(false)} className={styles.button18} answers = {answers[2].answerContent}> {answers[2].answerContent}</Button>
+                      <Button onClick={() => handleAnswer(questions[currentIndex].answers[2].isCorrect)} className={styles.button18} answerform = {answers[2].answerContent}> {answers[2].answerContent}</Button>
                     </div>
 
                     <div className={styles.buttonFormat}>
-                      <Button onClick={(e) => handleAnswer(false)} className={styles.button18} answers = {answers[3].answerContent}> {answers[3].answerContent}</Button>
-                    </div>      
+                      <Button onClick={() => handleAnswer(questions[currentIndex].answers[3].isCorrect)} className={styles.button18} answerform = {answers[3].answerContent}> {answers[3].answerContent}</Button>
+                    </div>     
                   </div> 
               </div>
           )}
