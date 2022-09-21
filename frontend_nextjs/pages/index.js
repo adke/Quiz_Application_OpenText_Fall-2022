@@ -5,8 +5,32 @@ import Image from 'next/image'
 import MainSection from '../components/MainSection'
 import QuizCard from '../components/QuizCard'
 import Link from 'next/link'
+import React, { useState, useEffect } from 'react';
+
+
+
 
 export default function Home() {
+
+  const [dataset, setDataset] = useState([])
+
+
+
+  useEffect(() => {
+
+    fetch("https://api.npoint.io/35d4f7ca2edc16eb9fc6")
+
+      .then((res) => res.json())
+
+      .then((data) => {
+
+        setDataset(data)
+
+      })
+
+
+  })
+
   return (
     <div>
       <Head>
@@ -37,7 +61,7 @@ export default function Home() {
           <MainSection />
           <h4 className={styles.leftmargin}>Or</h4>
           <p className={styles.leftmargin}>Please choose one of the following:</p>
-          <QuizCard />
+          <QuizCard props={dataset} />
         </div>
       </div>
     </>

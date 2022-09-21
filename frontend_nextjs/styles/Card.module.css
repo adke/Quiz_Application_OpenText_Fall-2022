@@ -18,3 +18,10 @@
     padding: 70px 16px;
     text-align: center;
 }
+
+.carddiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
