@@ -13,10 +13,12 @@ const QuizCard = ({ props }) => {
         arr.push(props[i].quizID);
     }
     // console.log(arr);
+    
+
     return (
         <div className={styles.carddiv}>
             {arr.map((quizIndex) => (
-                <div onClick={() => router.push('/takequiz')} className={styles.card}>
+                <div id={quizIndex} onClick={() => router.push('/takequiz')} className={styles.card}>
                     <div className={styles.container}>
                         <h4>{quizIndex}</h4>
 

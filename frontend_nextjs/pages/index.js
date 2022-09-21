@@ -14,7 +14,7 @@ export default function Home() {
 
   useEffect(() => {
 
-    fetch("https://api.npoint.io/35d4f7ca2edc16eb9fc6")
+    fetch("http://localhost:9090/quizzes/getAllQuiz")
       .then((res) => res.json())
       .then((data) => {
         setDataset(data)

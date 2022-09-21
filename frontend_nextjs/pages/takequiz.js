@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button'
 import styles from '../styles/TakeQuiz.module.css'
 import { useEffect, useState } from 'react'
 import Nav from '../components/Nav'
+
 import Question from '../components/TakeQuizComps/Question'
 // import styles from '../styles/Home.module.css'
 
@@ -22,10 +23,11 @@ export default function Takequiz({id}) {
     setScore(score + answerform);
     }
 
-// fetch("localhost:8080/quizzes/" + {id})
+// fetch("localhost:9090/quizzes/" + {id})
 
   useEffect(()=>{
-    fetch("https://api.npoint.io/93c556a56820caa8324f")
+    console.log('ID', id);
+    fetch("http://localhost:9090/quizzes/" + {id})
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.questions)
