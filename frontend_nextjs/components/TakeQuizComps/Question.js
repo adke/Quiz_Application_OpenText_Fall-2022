@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from '../../styles/TakeQuiz.module.css'
 
-const Question = (props) => {
+const Question = ( {data: {questions}} ) => {
   return (
-    <div>{props.question}</div>
+    <div>{questions?.questionContent}</div>
   )
 }
 

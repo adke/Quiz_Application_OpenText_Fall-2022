@@ -8,12 +8,9 @@ function Nav() {
                 <h1>Quizzer</h1>
             </div>
             <div className="anchor">
-                <Link href="/"><a>Home</a></Link>
-                <Link href="/about"><a>About</a></Link>
+                <Link href="/"><a id="home">Home</a></Link>
+                <Link href="/about"><a id="about">About</a></Link>
             </div>
-
-
-
         </nav>
     )
 }
