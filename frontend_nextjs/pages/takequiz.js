@@ -21,7 +21,7 @@ export default function Takequiz({}) {
     setCurrentIndex(currentIndex + 1);
     setScore(score + answerform);
     }
-
+// ("localhost:8080/quizzes/" + {id})
   useEffect(()=>{
     fetch("https://api.npoint.io/93c556a56820caa8324f")
       .then((res) => res.json())
