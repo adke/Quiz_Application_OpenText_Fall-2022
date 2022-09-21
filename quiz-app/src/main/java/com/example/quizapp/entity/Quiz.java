@@ -40,9 +40,9 @@ public class Quiz {
     )
     private String subject;
 
-//    @OneToMany(targetEntity = Question.class, cascade = CascadeType.ALL)
-//    @JoinColumn(name ="qq_fk",referencedColumnName = "quiz_id")
-    @OneToMany(mappedBy = "quiz")
+    @OneToMany(targetEntity = Question.class, cascade = CascadeType.ALL)
+    @JoinColumn(name ="quiz_id",referencedColumnName = "quiz_id")
+   // @OneToMany(mappedBy = "quiz")
     private List<Question> questions;
 
 

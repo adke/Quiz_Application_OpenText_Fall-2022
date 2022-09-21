@@ -43,7 +43,7 @@ public class Answer {
     )
     private boolean isCorrect;
 
-    @ManyToOne
-    @JoinColumn(name = "question_id")
-    private Question question;
+//    @ManyToOne
+//    @JoinColumn(name = "question_id",referencedColumnName = "question_id")
+//    private Question question;
 }
