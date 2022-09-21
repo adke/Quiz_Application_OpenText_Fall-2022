@@ -7,7 +7,7 @@ import Nav from '../components/Nav'
 import Question from '../components/TakeQuizComps/Question'
 // import styles from '../styles/Home.module.css'
 
-export default function Takequiz({}) {
+export default function Takequiz({id}) {
 
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
@@ -22,8 +22,10 @@ export default function Takequiz({}) {
     setScore(score + answerform);
     }
 
+// fetch("localhost:8080/quizzes/" + {id})
+
   useEffect(()=>{
-    fetch("https://api.npoint.io/4f02fc583fb8d474a8b6")
+    fetch("https://api.npoint.io/93c556a56820caa8324f")
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.questions)
@@ -36,7 +38,7 @@ export default function Takequiz({}) {
       <div>
         <Nav />
           {currentIndex >= questions.length ? (
-            <div className={styles.scoreFormat}> Your score is {score}!</div>
+            <div className={styles.scoreFormat}> Your score is {score} out of {questions.length}!</div>
           ) : (
               <div className={styles.questionFormat}>
                   <div className={styles.cardFormat}>
