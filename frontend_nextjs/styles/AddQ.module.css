@@ -12,13 +12,30 @@
     font-weight: bold;
 }
 
-.addq .noq {
-    background-color: transparent;
-    
-    color: black;
+.allQuestions {
+    /* border: cyan solid 2px; */
 
-    width: 2rem;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+.questionDiv {
+    /* border: red solid 1px; */
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.questionInput {
+    padding: 6px;
+}
+
+.buttonDiv {
+    display: flex;
+    gap: 10px;
 }
 
 .addq input {
@@ -32,16 +49,18 @@
 }
 
 .addq form {
+    /* border: blue solid 1px; */
+    
     color: black;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: left;
-    /* border: red solid 1px; */
-    margin: 0 10px;
 }
 
-
-.addq span {
-    margin: 10px;
+.submitBreak {
+    /* border: yellow solid 2px; */
+    display: block;
+    margin-top: 1rem;
 }
 

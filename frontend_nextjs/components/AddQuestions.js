@@ -12,14 +12,28 @@ function AddQuestions() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        // const newQuiz = {
+        //     "quizName": quizName,
+        //     "subject": subject,
+        //     "questions": Questions
+        // };
+        
         const newQuiz = {
             "quizName": quizName,
             "subject": subject,
-            "questions": [{"answers": [Questions]}]
+            "questions": Questions.map((questionObj, index) => (
+                {"question": questionObj.Question,
+                "answers": [
+                    {"content": questionObj.Answer, isCorrect: 1},
+                    {"content": questionObj.incorrectAnswer1, isCorrect: 0},
+                    {"content": questionObj.incorrectAnswer2, isCorrect: 0},
+                    {"content": questionObj.incorrectAnswer3, isCorrect: 0}
+                ]}
+            ))
         };
 
-        console.log("Quiz: ", newQuiz);
-
+        console.log("quiz: ", newQuiz);
+        
         // Send data to Server
         try {
             const { data } = await axios({
@@ -32,18 +46,6 @@ function AddQuestions() {
             console.log("Error: ", error);
         }
     }
-    
-    // QUESTIONS STATE ====================================================================================
-    const [Questions, setQuestions] = useState([
-        { Question: '', 
-          answers:[
-            {Answer: '', isCorrect: true}, 
-            {AnswerContent1: '', isCorrect: false}, 
-            {AnswerContent2: '', isCorrect: false}, 
-            {AnswerContent3: '', isCorrect: false}
-            ]
-        },
-    ])
 
     // handle Functions ===================================================================================
     const handleChangeInput = (index, event) => {
@@ -53,7 +55,21 @@ function AddQuestions() {
     }
 
     const handleAddFields = () => {
-        setQuestions([...Questions, { Question: '', Answer: '', AnswerContent1: '', AnswerContent2: '', AnswerContent3: '' }]);
+        // setQuestions([...Questions, 
+        //             { Question: '', 
+        //             Answer: '', 
+        //             AnswerContent1: '', 
+        //             AnswerContent2: '', 
+        //             AnswerContent3: '' }
+        //         ]);
+        setQuestions([...Questions, 
+            { Question: '', 
+            Answer: '',
+            incorrectAnswer1: '', 
+            incorrectAnswer2: '',
+            incorrectAnswer3: ''
+            }   
+        ]);
     }
 
     const handleRemoveFields = (index) => {
@@ -61,7 +77,27 @@ function AddQuestions() {
         values.splice(index, 1);
         setQuestions(values);
     }
-    
+
+    // QUESTIONS STATE ====================================================================================
+    // const [Questions, setQuestions] = useState([
+    //     { Question: '', 
+    //       answers:[
+    //         {Answer: '', isCorrect: 1}, 
+    //         {AnswerContent1: '', isCorrect: 0}, 
+    //         {AnswerContent2: '', isCorrect: 0}, 
+    //         {AnswerContent3: '', isCorrect: 0}
+    //         ]
+    //     },
+    // ])
+    const [Questions, setQuestions] = useState([
+        { Question: '', 
+          Answer: '',
+          incorrectAnswer1: '', 
+          incorrectAnswer2: '',
+          incorrectAnswer3: ''
+        },
+    ])
+
     // Page Structure =======================================================================================
     return (
         <div className={questionStyles.addq}>
@@ -81,22 +117,25 @@ function AddQuestions() {
             <br />
             <label>Input Questions Below:</label>
             
-            
             <form id='form' onSubmit={handleSubmit}>
-                { Questions.map((inputField, index) => (
-                    <div key={ index }>
-                        <input type='text' name='Question' onChange={event => handleChangeInput(index, event)} value={ inputField.Question } onClick={handleSubmit} placeholder='Question'/>
-                        <input type='text' name='Answer' onChange={event => handleChangeInput(index, event)} value={ inputField.Answer } onClick={handleSubmit} placeholder='Answer'/>
+                <div className={questionStyles.allQuestions}>
+                    { Questions.map((inputField, index) => (
+                        <div className={questionStyles.questionDiv} key={ index }>
+                            <input type='text' name='Question' onChange={event => handleChangeInput(index, event)} value={ inputField.Question } onClick={handleSubmit} placeholder='Question'className={questionStyles.questionInput}/>
+                            
+                            <input type='text' name='Answer' onChange={event => handleChangeInput(index, event)} value={ inputField.Answer } onClick={handleSubmit} placeholder='Answer'/>
 
-                        <input type='text' name='AnswerContent1' onChange={event => handleChangeInput(index, event)} value={ inputField.AnswerContent1 } onClick={handleSubmit} placeholder='Incorrect Answer'/>
-                        <input type='text' name='AnswerContent2' onChange={event => handleChangeInput(index, event)} value={ inputField.AnswerContent2 } onClick={handleSubmit} placeholder='Incorrect Answer'/>
-                        <input type='text' name='AnswerContent3' onChange={event => handleChangeInput(index, event)} value={ inputField.AnswerContent3 } onClick={handleSubmit} placeholder='Incorrect Answer'/>
-                        <button className="btn btn-outline-primary" onClick={() => handleRemoveFields(index)}>-</button>
-                        <button className="btn btn-outline-primary" onClick={() => handleAddFields()}>+</button>
-                    </div>
-                ))}
-                <div>
-                    <br />
+                            <input type='text' name='incorrectAnswer1' onChange={event => handleChangeInput(index, event)} value={ inputField.incorrectAnswer1 } onClick={handleSubmit} placeholder='Incorrect Answer'/>
+                            <input type='text' name='incorrectAnswer2' onChange={event => handleChangeInput(index, event)} value={ inputField.incorrectAnswer2 } onClick={handleSubmit} placeholder='Incorrect Answer'/>
+                            <input type='text' name='incorrectAnswer3' onChange={event => handleChangeInput(index, event)} value={ inputField.incorrectAnswer3 } onClick={handleSubmit} placeholder='Incorrect Answer'/>
+                            <div className={questionStyles.buttonDiv}>
+                                <button className="btn btn-outline-primary" onClick={() => handleRemoveFields(index)}>-</button>
+                                <button className="btn btn-outline-primary" onClick={() => handleAddFields()}>+</button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                <div className={questionStyles.submitBreak}>
                     <button type='submit' onClick={handleSubmit} className="btn btn-outline-primary">Submit</button>
                 </div>
             </form>
