@@ -8,6 +8,7 @@ import takequiz from '../pages/takequiz';
 const QuizCard = ({ props }) => {
     const router = useRouter();
     const arr = [];
+    const arr1 = [];
     // console.log("QUIZCARD", props[0].quizName);
     for (let i = 0; i < props.length; i++) {
         arr.push(props[i].quizID);
@@ -16,14 +17,16 @@ const QuizCard = ({ props }) => {
     return (
         <div className={styles.carddiv}>
             {arr.map((quizIndex) => (
+
                 <div onClick={() => router.push('/takequiz')} className={styles.card}>
                     <div className={styles.container}>
-                        <h4>{quizIndex}</h4>
+                        <h4 className={styles.cardAlign}>Quiz: {quizIndex}</h4>
 
-                        <p>Subject</p>
                     </div>
                 </div>
             ))}
+
+
         </div>
     );
 

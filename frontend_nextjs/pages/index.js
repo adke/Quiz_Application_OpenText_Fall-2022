@@ -26,12 +26,12 @@ export default function Home() {
       <Head>
         <title>Quizzler</title>
       </Head>
-      
-      <Nav />    
+
+      <Nav />
       <div className="secondary-main">
         <h1 className={styles.title}>Homepage</h1>
         <h2 className={styles.leftmargin}>Welcome to Quizzer!</h2>
-        <h2>Quizzes</h2>
+        <h2 className={styles.leftmargin}>Quizzes</h2>
         <QuizCard props={dataset} />
         <MainSection />
       </div>
