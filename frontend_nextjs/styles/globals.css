@@ -34,12 +34,53 @@ nav a {
 }
 
 nav .logo {
-  margin-left: 80px;
+  margin-left: 50px;
   margin-right: auto;
 }
 
-footer {
-  display: block;
+
+h1{
+  padding-left: 3rem;
+  color: white;
+}
+
+h2{
+  padding-top: 1rem;
+}
+
+h4, p {
+  color: black;
+}
+
+
+/* CSS */
+.button-17 {
+  align-items: center;
+  appearance: none;
+  background-color: #fff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 48px;
+  justify-content: center;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+}
+
+.not-found {
+  margin: 30% 0;
   text-align: center;
   padding: 30px 0;
   margin-top: 60px;
@@ -56,10 +97,21 @@ footer {
   text-decoration: underline;
 }
 
+.button-17:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+.not-found p {
+  color: #4979ff;
+  text-decoration: underline;
+}
+
 .cardformat {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
   margin: 25px 75px;
 }
 
@@ -72,4 +124,34 @@ footer {
 
 .anchor {
   margin: 20px 80px;
+}
+
+
+/* AddQuiz Inputs */
+.Qinput {
+  width: 20rem;
+}
+.A_right_input {
+  background-color: rgba(191, 227, 190, 0.5);
+}
+.A_wrong_input {
+  background-color: rgba(244, 113, 116, 0.5);
+}
+.SubmitInput {
+  border: red;
+}
+
+#home:hover {
+  color: white;
+  font-weight: bold;
+}
+
+#about:hover {
+  color: white;
+  font-weight: bold;
+}
+
+.secondary-main {
+  margin: 15px;
+  margin-top: 25px;
 }

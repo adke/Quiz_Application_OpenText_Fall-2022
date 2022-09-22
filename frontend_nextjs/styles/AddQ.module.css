@@ -1,36 +1,45 @@
 
 
 .addq {
-    margin-left: 2rem;
-    margin-top: 2rem;
+    margin: 30px 80px;
 }  
+.addq p {
+    margin-right: 2rem;
+}
 
 .addq label {
     margin-right: 1rem;
+    font-weight: bold;
 }
 
 .addq .noq {
-    background-color: white;
-    color: white;
+    background-color: transparent;
     
+    color: black;
+
+    width: 2rem;
+    text-align: center;
 }
+
 .addq input {
     border: black solid 1px;
-    background-color: rgba(103, 103, 103, 0.3);
     color: black;
-    
-    width: 12rem;
-    height: 1.5rem;
-    padding: 5px;
+
+    margin: 0.5rem 0;
+    margin-bottom: 1rem;
+
     border-radius: 5px;
 }
 
 .addq form {
     color: black;
-    border: red solid 2px;
-
-    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    /* border: red solid 1px; */
+    margin: 0 10px;
 }
+
 
 .addq span {
     margin: 10px;

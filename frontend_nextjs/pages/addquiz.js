@@ -12,7 +12,9 @@ export default function Addquiz() {
         <title>Quizzer</title>
       </Head>
       <Nav />
-      <AddQuestions /> 
+      <div className='secondary-main'>
+        <AddQuestions /> 
+      </div>
       
     </div>
   )
