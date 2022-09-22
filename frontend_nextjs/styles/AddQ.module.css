@@ -12,13 +12,12 @@
     font-weight: bold;
 }
 
-.addq .noq {
-    background-color: transparent;
-    
-    color: black;
+.questionsDiv {
+    border: red solid 1px;
 
-    width: 2rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .addq input {
@@ -32,16 +31,18 @@
 }
 
 .addq form {
+    border: blue solid 1px;
+    gap: 10px;
     color: black;
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    /* border: red solid 1px; */
     margin: 0 10px;
 }
 
-
-.addq span {
-    margin: 10px;
+.submitBreak {
+    border: yellow solid 2px;
+    display: block;
+    
 }
 
