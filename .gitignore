@@ -23,3 +23,14 @@ frontend_nextjs/.next/static/chunks/main.js
 frontend_nextjs/.next/static/chunks/pages/_app.js
 frontend_nextjs/.next/static/chunks/pages/index.js
 frontend_nextjs/.next/trace
+*.pack
+*.old
+frontend_nextjs/.next/cache/webpack/client-development/2.pack
+frontend_nextjs/.next/cache/webpack/client-development/index.pack
+frontend_nextjs/.next/cache/webpack/client-development/index.pack.old
+frontend_nextjs/.next/cache/webpack/server-development/0.pack
+frontend_nextjs/.next/cache/webpack/server-development/1.pack
+frontend_nextjs/.next/cache/webpack/server-development/index.pack
+frontend_nextjs/.next/cache/webpack/server-development/index.pack.old
+frontend_nextjs/.next/server/middleware-build-manifest.js
+frontend_nextjs/.next/static/development/_buildManifest.js

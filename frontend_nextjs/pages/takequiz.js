@@ -8,7 +8,7 @@ import Question from '../components/TakeQuizComps/Question'
 // import styles from '../styles/Home.module.css'
 
 export default function Takequiz({quizIndex}) {
-
+  // Set variables
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [subject, setSubject] = useState([]);
@@ -17,13 +17,16 @@ export default function Takequiz({quizIndex}) {
 
 
   const handleAnswer = (answerform) => {
+    //Set New Index from current index
     const newIndex = currentIndex + 1;
     setCurrentIndex(currentIndex + 1);
+
+    //Set score through isCorrect Value sum
     setScore(score + answerform);
     }
 
-fetch("localhost:8080/quizzes/" + {quizIndex})
-
+// fetch("localhost:8080/quizzes/" + {quizIndex})
+  //Fetch API
   useEffect(()=>{
     fetch("https://api.npoint.io/93c556a56820caa8324f")
       .then((res) => res.json())
@@ -34,6 +37,7 @@ fetch("localhost:8080/quizzes/" + {quizIndex})
       })
   })
 
+  //Run quiz for the duration of the quiz question length
   return questions.length > 0 ? (
       <div>
         <Nav />
@@ -49,14 +53,14 @@ fetch("localhost:8080/quizzes/" + {quizIndex})
                                       <h4 className={styles.questiontitle}>
                                           <b>{subject}</b>
                                       </h4>
-                                      <h4 className={styles.questiontitle}> {/* Quiz title inserts here */}
+                                      <h4 className={styles.questiontitle}>
                                           {/* <Question question={props.props.questions[step].questionContent}/> */}
                                           {questions[currentIndex]?.questionContent}
                                       </h4> 
                                   </div>
                               </div>
                           </div>
-                  </div>
+                  </div>                  
                   <div className={styles.answerFormat}>
                     <div className={styles.buttonFormat}>
                       <Button onClick={() => handleAnswer(questions[currentIndex].answers[0].isCorrect)} className={styles.button18} answerform = {answers[0].answerContent}> {answers[0].answerContent}</Button>
@@ -78,6 +82,7 @@ fetch("localhost:8080/quizzes/" + {quizIndex})
           )}
         </div>
     ) : (
+      //If error happens display error message
       <h1>ERROR ARISING</h1>
     )
 }
