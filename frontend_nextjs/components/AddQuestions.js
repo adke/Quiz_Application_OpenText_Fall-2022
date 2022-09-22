@@ -37,7 +37,7 @@ function AddQuestions() {
         // Send data to Server
         try {
             const { data } = await axios({
-                url: "/api/quizadd",
+                url: "/api/createNewQuiz",
                 method: "POST",
                 data: newQuiz
             });
