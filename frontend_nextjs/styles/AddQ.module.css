@@ -12,12 +12,30 @@
     font-weight: bold;
 }
 
-.questionsDiv {
-    border: red solid 1px;
+.allQuestions {
+    /* border: cyan solid 2px; */
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+.questionDiv {
+    /* border: red solid 1px; */
 
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+}
+.questionInput {
+    padding: 6px;
+}
 
+.buttonDiv {
+    display: flex;
+    gap: 10px;
 }
 
 .addq input {
@@ -31,18 +49,18 @@
 }
 
 .addq form {
-    border: blue solid 1px;
-    gap: 10px;
+    /* border: blue solid 1px; */
+    
     color: black;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: left;
-    margin: 0 10px;
 }
 
 .submitBreak {
-    border: yellow solid 2px;
+    /* border: yellow solid 2px; */
     display: block;
-    
+    margin-top: 1rem;
 }
 
