@@ -12,14 +12,28 @@ function AddQuestions() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        // const newQuiz = {
+        //     "quizName": quizName,
+        //     "subject": subject,
+        //     "questions": Questions
+        // };
+        
         const newQuiz = {
             "quizName": quizName,
             "subject": subject,
-            "questions": Questions
+            "questions": Questions.map((questionObj, index) => (
+                {"question": questionObj.Question,
+                "answers": [
+                    {"content": questionObj.Answer, isCorrect: 1},
+                    {"content": questionObj.incorrectAnswer1, isCorrect: 0},
+                    {"content": questionObj.incorrectAnswer2, isCorrect: 0},
+                    {"content": questionObj.incorrectAnswer3, isCorrect: 0}
+                ]}
+            ))
         };
 
         console.log("quiz: ", newQuiz);
-
+        
         // Send data to Server
         try {
             const { data } = await axios({
