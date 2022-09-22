@@ -190,8 +190,6 @@ padding: 2px 24px;
 position: relative;
 text-align: center;
 text-transform: none;
-transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-will-change: transform,opacity;
 z-index: 0;
 }
 
@@ -239,9 +237,7 @@ color: grey;
     background-color: red
 }
 
-
-
-/* .button18:active {
+.button18:active {
 box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
 outline: none;
 }
@@ -269,7 +265,7 @@ box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6
 
 .button18:disabled {
 box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
-} */
+}
 
 /* CSS */
 .button19 {

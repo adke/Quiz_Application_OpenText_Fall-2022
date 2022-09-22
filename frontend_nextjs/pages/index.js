@@ -12,6 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     fetch("http://localhost:8080/quizzes/getAllQuiz")
+    // fetch("https://api.npoint.io/35d4f7ca2edc16eb9fc6")
       .then((res) => res.json())
       .then((data) => {
         setDataset(data);

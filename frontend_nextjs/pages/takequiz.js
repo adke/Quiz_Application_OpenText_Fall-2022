@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import styles from "../styles/TakeQuiz.module.css";
 import { useEffect, useState } from "react";
 import Nav from "../components/Nav";
-
+import Link from "next/link";
 import Question from "../components/TakeQuizComps/Question";
 import { useRouter } from "next/router";
 // import styles from '../styles/Home.module.css'
@@ -24,11 +24,10 @@ export default function Takequiz() {
     setScore(score + answerform);
   };
 
-  // fetch("localhost:8080/quizzes/" + {quizIndex})
-
   useEffect(() => {
     console.log("ID", id);
     fetch(`http://localhost:8080/quizzes/${id}`)
+    // fetch(`https://api.npoint.io/4f02fc583fb8d474a8b6`)
       .then((res) => res.json())
       .then((data) => {
         setQuestions(data.questions);
@@ -44,6 +43,11 @@ export default function Takequiz() {
         <div className={styles.scoreFormat}>
           {" "}
           Your score is {score} out of {questions.length}!
+          <div className={styles.questionFormat}>
+            <Link href='/'>
+                <button type="button" class="btn btn-outline-primary">Go Home</button>
+            </Link>
+          </div>  
         </div>
       ) : (
         <div className={styles.questionFormat}>
@@ -67,7 +71,7 @@ export default function Takequiz() {
           </div>
           <div className={styles.answerFormat}>
             <div className={styles.buttonFormat}>
-              <Button
+              <button
                 onClick={() =>
                   handleAnswer(questions[currentIndex].answers[0].isCorrect)
                 }
@@ -76,11 +80,11 @@ export default function Takequiz() {
               >
                 {" "}
                 {answers[0].answerContent}
-              </Button>
+              </button>
             </div>
 
             <div className={styles.buttonFormat}>
-              <Button
+              <button
                 onClick={() =>
                   handleAnswer(questions[currentIndex].answers[1].isCorrect)
                 }
@@ -89,11 +93,11 @@ export default function Takequiz() {
               >
                 {" "}
                 {answers[1].answerContent}
-              </Button>
+              </button>
             </div>
 
             <div className={styles.buttonFormat}>
-              <Button
+              <button
                 onClick={() =>
                   handleAnswer(questions[currentIndex].answers[2].isCorrect)
                 }
@@ -102,11 +106,11 @@ export default function Takequiz() {
               >
                 {" "}
                 {answers[2].answerContent}
-              </Button>
+              </button>
             </div>
 
             <div className={styles.buttonFormat}>
-              <Button
+              <button
                 onClick={() =>
                   handleAnswer(questions[currentIndex].answers[3].isCorrect)
                 }
@@ -115,7 +119,7 @@ export default function Takequiz() {
               >
                 {" "}
                 {answers[3].answerContent}
-              </Button>
+              </button>
             </div>
           </div>
         </div>
