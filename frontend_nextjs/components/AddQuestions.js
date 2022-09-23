@@ -33,12 +33,12 @@ function AddQuestions() {
 
     console.log("quiz: ", newQuiz);
 
-    const config = {
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-      },
-    };
+    // const config = {
+    //   headers: {
+    //     "Access-Control-Allow-Origin": "*",
+    //     "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+    //   },
+    // };
 
     // Send data to Server
     // try {
@@ -52,11 +52,15 @@ function AddQuestions() {
     // } catch (error) {
     //   console.log("Error: ", error);
     // }
-    const data = await axios.post(
-      "http://localhost:8080/quizzes/createNewQuiz:",
-      newQuiz,
-      config
-    );
+    try {
+      const data = await axios.post(
+        "http://localhost:8080/quizzes/createNewQuiz:",
+        newQuiz
+      );
+      console.log("Response from POST: ", data);
+    } catch (error) {
+      console.log("Error: ", error);
+    }
   };
 
   // handle Functions ===================================================================================

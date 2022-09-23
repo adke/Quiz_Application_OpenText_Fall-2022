@@ -16,7 +16,7 @@ export default function Home() {
       .then((data) => {
         setDataset(data);
       });
-  });
+  }, []);
 
   return (
     <div>
